@@ -1,5 +1,6 @@
 package com.diflows.backend.controller;
 
+import com.diflows.backend.aspect.DiFlowsLog;
 import com.diflows.backend.model.FlowsMsg;
 import com.diflows.backend.service.IFlowsMsgService;
 import com.diflows.backend.service.Impl.FlowsMsgService;
@@ -19,6 +20,7 @@ public class MyController {
         this.flowsMsgService = flowsMsgService;
     }
 
+    @DiFlowsLog
     @GetMapping("/")
     public FlowsMsg sayHello(){
         return flowsMsgService.getOne(2);
